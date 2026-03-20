@@ -2,14 +2,6 @@
 <html>
 <head>
     <style>
-        <script>
-const backgrounds = {
-    mountains: "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80')",
-    city: "url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1600&q=80')",
-    space: "url('https://images.unsplash.com/photo-1462332420958-a05d1e002413?auto=format&fit=crop&w=1600&q=80')",
-    ocean: "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80')"
-};
-
 function applySavedTheme() {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "light") {
@@ -51,6 +43,25 @@ function applySavedBackground() {
 
 applySavedTheme();
 setRandomBackground();
+    body {
+    margin: 0;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+
+    background-color: #0f172a;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+    body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.7);
+    z-index: -1;
+}
 </script>
     body {
         background-color: #0f172a;
@@ -625,12 +636,12 @@ body::before {
 }
 
 .light-theme {
-    color: #0f172a;
-    background-color: #e2e8f0;
+    background-color: #e2e8f0 !important;
+    color: #0f172a !important;
 }
 
 .light-theme::before {
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .wallpapers {
