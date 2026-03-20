@@ -59,6 +59,42 @@
         .contact-box a:hover {
             color: white;
         }
+        <form class="contact-form">
+    <input type="text" placeholder="Ваше имя" required>
+    <input type="email" placeholder="Ваш email" required>
+    <textarea placeholder="Ваше сообщение" rows="5" required></textarea>
+    <button type="submit">Отправить</button>
+</form>
+        .contact-form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #0f172a;
+    color: white;
+}
+
+.contact-form button {
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #38bdf8;
+    color: #0f172a;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #0ea5e9;
+}
     </style>
 </head>
 <body>
