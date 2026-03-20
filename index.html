@@ -95,13 +95,13 @@ window.addEventListener('scroll', showOnScroll);
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
-    footer {
-    margin-top: 80px;
-    padding: 20px;
+   footer {
+    margin-top: 100px;
+    padding: 25px;
     font-size: 14px;
-    color: #94a3b8;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}    
+    color: #64748b;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
 
 h3 {
     color: #38bdf8;
@@ -537,6 +537,14 @@ section p {
 .light-theme .navbar a {
     color: #0ea5e9;
 }
+    .skills li {
+    transition: 0.3s;
+}
+
+.skills li:hover {
+    transform: scale(1.05);
+    background-color: #1e293b;
+}
 </style>
     <title>Мой первый сайт</title>
 </head>
@@ -591,13 +599,22 @@ section p {
         <li>GitHub</li>
     </ul>
 </section>
+    <ul class="skills">
+    <li>💻 HTML</li>
+    <li>🎨 CSS</li>
+    <li>🚀 GitHub</li>
+</ul>
     <section id="contact">
     <h2>Контакты</h2>
-    <p>Email: olgaltivinenkolitvinenko@email.com</p>
         <p>Email: <a href="mailto:olgalitvinenkolitvinenko@email.com">olgalitvinenkolitvinenko@email.com</a></p>
-    <p>GitHub: olgaltivinenkolitvinenko-ux</p>
+        <p>GitHub: 
+<a href="https://github.com/olgaltivinenkolitvinenko-ux" target="_blank">
+olgaltivinenkolitvinenko-ux
+</a>
+</p>
 </section>
    <button class="theme-toggle" onclick="toggleTheme()">Сменить тему</button>
+    <button onclick="toggleTheme()" class="btn">Сменить тему</button>
     <footer>
     <p>© 2026 Оля | Мой первый сайт</p>
 </footer>
