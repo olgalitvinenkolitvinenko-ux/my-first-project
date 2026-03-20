@@ -66,6 +66,13 @@
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
+    footer {
+    margin-top: 80px;
+    padding: 20px;
+    font-size: 14px;
+    color: #94a3b8;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}    
 
 h3 {
     color: #38bdf8;
@@ -199,6 +206,34 @@ body {
     color: white;
     transform: translateY(-2px);
 }
+    .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 15px;
+    margin-bottom: 30px;
+
+    background: rgba(19, 32, 66, 0.8);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
 
 /* HERO */
 .hero {
@@ -226,6 +261,13 @@ body {
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
+}
+    .hero img {
+    transition: 0.3s;
+}
+
+.hero img:hover {
+    transform: scale(1.05);
 }
 
 .hello {
@@ -313,12 +355,12 @@ p {
     border-radius: 18px;
     transition: 0.3s;
     box-shadow: 0 0 20px rgba(56, 189, 248, 0.08);
-    border: 1px solid rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.1);
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
+   box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
 }
 
 h3 {
@@ -479,7 +521,11 @@ section p {
     <section id="contact">
     <h2>Контакты</h2>
     <p>Email: olgaltivinenkolitvinenko@email.com</p>
+        <p>Email: <a href="mailto:olgalitvinenkolitvinenko@email.com">твояпочта@email.com</a></p>
     <p>GitHub: olgaltivinenkolitvinenko-ux</p>
 </section>
+    <footer>
+    <p>© 2026 Оля | Мой первый сайт</p>
+</footer>
     </body>
 </html>
