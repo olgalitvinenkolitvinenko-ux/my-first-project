@@ -1,731 +1,447 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <style>
-function applySavedTheme() {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "light") {
-        document.body.classList.add("light-theme");
-    }
-}
-
-function toggleTheme() {
-    document.body.classList.toggle("light-theme");
-
-    if (document.body.classList.contains("light-theme")) {
-        localStorage.setItem("theme", "light");
-    } else {
-        localStorage.setItem("theme", "dark");
-    }
-}
-
-function setBackground(name) {
-    if (backgrounds[name]) {
-        document.body.style.backgroundImage = backgrounds[name];
-        localStorage.setItem("background", name);
-    }
-}
-
-function setRandomBackground() {
-    const keys = Object.keys(backgrounds);
-    const randomKey = keys[Math.floor(Math.random() * keys.length)];
-    setBackground(randomKey);
-}
-
-function applySavedBackground() {
-    const savedBackground = localStorage.getItem("background");
-    if (savedBackground && backgrounds[savedBackground]) {
-        document.body.style.backgroundImage = backgrounds[savedBackground];
-    } else {
-        setBackground("mountains");
-    }
-}
-
-applySavedTheme();
-setRandomBackground();
-    body {
-    margin: 0;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-
-    background-color: #0f172a;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-    body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(2, 6, 23, 0.7);
-    z-index: -1;
-}
-</script>
-    body {
-        background-color: #0f172a;
-        color: white;
-        font-family: Arial;
-        text-align: center;
-    }
-        <button onclick="showMessage()" class="btn">Нажми меня</button>
-        <script>
-const elements = document.querySelectorAll('.hidden');
-
-function showOnScroll() {
-    const trigger = window.innerHeight * 0.85;
-
-    elements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-
-        if (top < trigger) {
-            el.classList.add('show');
-        }
-        function showMessage() {
-    alert("Ты молодец! 🚀");
-}
-    });
-}
-
-window.addEventListener('scroll', showOnScroll);
-</script>
-        body {
-    background: radial-gradient(circle at top, #0f172a, #020617);
-}
-
-    h1 {
-        color: #38bdf8;
-        font-size: 40px;
-    }
-        h1 {
-    background: linear-gradient(90deg, #38bdf8, #0ea5e9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-    p {
-        font-size: 18px;
-        margin: 10px 0;
-    }
-        img {
-    margin-top: 20px;
-    border-radius: 50%;
-    width: 150px;
-}
-        .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #38bdf8;
-    color: #0f172a;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #38bdf8;
-    color: #0f172a;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-       .btn:hover {
-    background-color: #0ea5e9;
-    transform: scale(1.05);
-}
-        h2 {
-    margin-top: 40px;
-    color: #38bdf8;
-}
-        .card {
-    background-color: #132042;
-    padding: 20px;
-    margin: 20px auto;
-    width: 300px;
-    border-radius: 12px;
-    transition: 0.3s;
-            box-shadow: 0 0 20px rgba(56,189,248,0.1);
-}
-        .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-   footer {
-    margin-top: 100px;
-    padding: 25px;
-    font-size: 14px;
-    color: #64748b;
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-h3 {
-    color: #38bdf8;
-    .skills {
-    list-style: none;
-    padding: 0;
-}
-
-.skills li {
-    background-color: #132042;
-    margin: 10px auto;
-    padding: 10px;
-    width: 200px;
-    border-radius: 8px;
-}
-    .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-    html {
-    scroll-behavior: smooth;
-}
-
-.navbar {
-    margin-bottom: 30px;
-    padding: 15px 20px;
-    background-color: #132042;
-    border-radius: 12px;
-}
-
-.navbar a {
-    color: #38bdf8;
-    text-decoration: none;
-    margin: 0 12px;
-    font-weight: bold;
-}
-
-.navbar a:hover {
-    color: white;
-}
-    .hidden {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-section {
-    margin-top: 50px;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-    .navbar {
-    position: sticky;
-    top: 0;
-    background-color: #132042;
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    z-index: 100;
-}
-
-.navbar a {
-    color: #38bdf8;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-.navbar a:hover {
-    color: white;
-}
-    .projects {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-    .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    margin-top: 40px;
-}
-
-.hero-text {
-    text-align: left;
-}
-    html {
-    scroll-behavior: smooth;
-}
-    <section id="about" class="hidden">
-<section id="projects" class="hidden">
-<section id="skills" class="hidden">
-<section id="contact" class="hidden">
-    <script>
-function toggleTheme() {
-    document.body.classList.toggle('light-theme');
-}
-</script>
-
-body {
-    background: linear-gradient(180deg, #0f172a 0%, #081225 100%);
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* МЕНЮ */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    padding: 18px 20px;
-    margin-bottom: 40px;
-    background: rgba(19, 32, 66, 0.85);
-    border: 1px solid rgba(56, 189, 248, 0.15);
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-}
-
-.navbar a {
-    color: #38bdf8;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.navbar a:hover {
-    color: white;
-    transform: translateY(-2px);
-}
-    .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-
-    padding: 15px;
-    margin-bottom: 30px;
-
-    background: rgba(19, 32, 66, 0.8);
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-}
-
-.navbar a {
-    color: #38bdf8;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.navbar a:hover {
-    color: white;
-    transform: translateY(-2px);
-}
-
-/* HERO */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    text-align: left;
-    padding: 40px 0 20px;
-}
-
-.hero-text {
-    flex: 1;
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.hero-image img {
-    width: 280px;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
-}
-    .hero img {
-    transition: 0.3s;
-}
-
-.hero img:hover {
-    transform: scale(1.05);
-}
-
-.hello {
-    color: #94a3b8;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-h1 {
-    color: #38bdf8;
-    font-size: 56px;
-    margin: 0 0 15px;
-}
-
-.subtitle {
-    font-size: 20px;
-    line-height: 1.6;
-    color: #e2e8f0;
-    max-width: 520px;
-}
-
-<div class="hero-buttons">
-    <a href="#projects" class="btn">Мои проекты</a>
-    <a href="#contact" class="btn btn-outline">Контакты</a>
-    <button onclick="toggleTheme()" class="btn" type="button">Сменить тему</button>
-    <button onclick="setRandomBackground()" class="btn btn-outline" type="button">Случайный фон</button>
-</div>
-    <section class="wallpapers">
-    <h2>Фон сайта</h2>
-    <div class="wallpaper-buttons">
-        <button class="btn" type="button" onclick="setBackground('mountains')">Горы</button>
-        <button class="btn" type="button" onclick="setBackground('city')">Город</button>
-        <button class="btn" type="button" onclick="setBackground('space')">Космос</button>
-        <button class="btn" type="button" onclick="setBackground('ocean')">Океан</button>
-    </div>
-</section>
-/* КНОПКИ */
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #38bdf8;
-    color: #0f172a;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background-color: #0ea5e9;
-    transform: scale(1.05);
-}
-
-.btn-outline {
-    background: transparent;
-    color: #38bdf8;
-    border: 1px solid #38bdf8;
-}
-
-.btn-outline:hover {
-    background-color: #132042;
-    color: white;
-}
-
-/* СЕКЦИИ */
-section {
-    margin-top: 80px;
-}
-
-h2 {
-    margin-bottom: 25px;
-    color: #38bdf8;
-    font-size: 38px;
-}
-
-p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-/* ПРОЕКТЫ */
-.projects {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: linear-gradient(180deg, #132042 0%, #0f1c3b 100%);
-    padding: 25px;
-    width: 320px;
-    border-radius: 18px;
-    transition: 0.3s;
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.08);
-    border: 1px solid rgba(56, 189, 248, 0.1);
-}
-
-.card:hover {
-    transform: translateY(-8px);
-   box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
-}
-
-h3 {
-    color: #38bdf8;
-    margin-top: 0;
-}
-
-/* НАВЫКИ */
-.skills {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.skills li {
-    background-color: #132042;
-    margin: 12px auto;
-    padding: 12px 20px;
-    width: 220px;
-    border-radius: 10px;
-    border: 1px solid rgba(56, 189, 248, 0.08);
-}
-
-/* КОНТАКТЫ */
-#contact p {
-    margin: 8px 0;
-}
-
-/* АНИМАЦИИ */
-.hero,
-.card,
-.skills li,
-section h2,
-section p {
-    animation: fadeUp 0.8s ease both;
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(18px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* АДАПТИВ */
-@media (max-width: 900px) {
-    .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .hero-text {
-        text-align: center;
-    }
-
-    .subtitle {
-        margin: 0 auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-    .theme-toggle {
-    padding: 10px 16px;
-    border: none;
-    border-radius: 10px;
-    background: #38bdf8;
-    color: #0f172a;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-    h1 {
-        font-size: 44px;
-    }
-}
-
-@media (max-width: 600px) {
-    .navbar {
-        flex-wrap: wrap;
-        gap: 12px;
-        padding: 14px;
-    }
-
-    h1 {
-        font-size: 36px;
-    }
-
-    h2 {
-        font-size: 30px;
-    }
-
-    .hero-image img {
-        width: 220px;
-        height: 220px;
-    }
-
-    .card {
-        width: 100%;
-        max-width: 320px;
-    }
-
-    .container {
-        padding: 16px;
-    }
-}
-    .light-theme {
-    background: #f8fafc;
-    color: #0f172a;
-}
-
-.light-theme .navbar {
-    background: rgba(226, 232, 240, 0.9);
-}
-
-.light-theme .card,
-.light-theme .contact-box {
-    background: #e2e8f0;
-    color: #0f172a;
-}
-
-.light-theme .navbar a {
-    color: #0ea5e9;
-}
-    .skills li {
-    transition: 0.3s;
-}
-
-.skills li:hover {
-    transform: scale(1.05);
-    background-color: #1e293b;
-}
-    body {
-    margin: 0;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #0f172a;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    transition: background-image 0.5s ease, background-color 0.3s ease, color 0.3s ease;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(2, 6, 23, 0.72);
-    z-index: -1;
-}
-
-.light-theme {
-    background-color: #e2e8f0 !important;
-    color: #0f172a !important;
-}
-
-.light-theme::before {
-    background: rgba(255, 255, 255, 0.6);
-}
-
-.wallpapers {
-    margin-top: 50px;
-}
-
-.wallpaper-buttons {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 15px;
-}
-
-button.btn {
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мой первый сайт</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #0f172a;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            transition: background-image 0.5s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 6, 23, 0.72);
+            z-index: -1;
+        }
+
+        .light-theme {
+            background-color: #e2e8f0 !important;
+            color: #0f172a !important;
+        }
+
+        .light-theme::before {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .light-theme .navbar {
+            background: rgba(226, 232, 240, 0.9);
+        }
+
+        .light-theme .card {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        .light-theme .navbar a {
+            color: #0ea5e9;
+            }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            margin-bottom: 30px;
+            background: rgba(19, 32, 66, 0.8);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            text-align: left;
+            padding: 40px 0 20px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
+            transition: 0.3s;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .hello {
+            color: #94a3b8;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 56px;
+            margin: 0 0 15px;
+            background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #e2e8f0;
+            max-width: 520px;
+        }
+
+        .hero-buttons {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #38bdf8;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0ea5e9;
+            transform: scale(1.05);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+        }
+
+        .btn-outline:hover {
+            background-color: #132042;
+            color: white;
+        }
+
+        section {
+            margin-top: 80px;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #38bdf8;
+            font-size: 38px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .projects {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: linear-gradient(180deg, #132042 0%, #0f1c3b 100%);
+            padding: 25px;
+            width: 320px;
+            border-radius: 18px;
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
+        }
+
+        h3 {
+            color: #38bdf8;
+            margin-top: 0;
+        }
+
+        .skills {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .skills li {
+            background-color: #132042;
+            margin: 12px auto;
+            padding: 12px 20px;
+            width: 220px;
+            border-radius: 10px;
+            border: 1px solid rgba(56, 189, 248, 0.08);
+            transition: 0.3s;
+        }
+
+        .skills li:hover {
+            transform: scale(1.05);
+            background-color: #1e293b;
+        }
+
+        #contact p {
+            margin: 8px 0;
+        }
+
+        .wallpapers {
+            margin-top: 50px;
+        }
+
+        .wallpaper-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        footer {
+            margin-top: 100px;
+            padding: 25px;
+            font-size: 14px;
+            color: #64748b;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .subtitle {
+                margin: 0 auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 44px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-wrap: wrap;
+                gap: 12px;
+                padding: 14px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            .hero-image img {
+                width: 220px;
+                height: 220px;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .container {
+                padding: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-     <nav class="navbar">
-    <a href="index.html">Главная</a>
-    <a href="projects.html">Проекты</a>
-    <a href="contact.html">Контакты</a>
-</nav>
-   <section id="home" class="hero">
-    <div class="hero-text">
-        <p class="hello">Привет, я</p>
-        <h1>Оля 👋</h1>
-        <p class="subtitle">Начинающий веб-разработчик. Изучаю HTML, CSS, GitHub и создаю свои первые красивые сайты.</p>
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html">Главная</a>
+            <a href="projects.html">Проекты</a>
+            <a href="contact.html">Контакты</a>
+        </nav>
 
-        <div class="hero-buttons">
-            <a href="#projects" class="btn">Мои проекты</a>
-            <a href="#contact" class="btn btn-outline">Контакты</a>
-        </div>
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <p class="hello">Привет, я</p>
+                <h1>Оля 👋</h1>
+                <p class="subtitle">Начинающий веб-разработчик. Изучаю HTML, CSS, GitHub и создаю свои первые красивые сайты.</p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">Мои проекты</a>
+                    <a href="#contact" class="btn btn-outline">Контакты</a>
+                    <button onclick="toggleTheme()" class="btn" type="button">Сменить тему</button>
+                    <button onclick="setRandomBackground()" class="btn btn-outline" type="button">Случайный фон</button>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="https://picsum.photos/300" alt="моё фото">
+            </div>
+        </section>
+
+        <section class="wallpapers">
+            <h2>Фон сайта</h2>
+            <div class="wallpaper-buttons">
+                <button class="btn" type="button" onclick="setBackground('mountains')">Горы</button>
+                <button class="btn" type="button" onclick="setBackground('city')">Город</button>
+                <button class="btn" type="button" onclick="setBackground('space')">Космос</button>
+                <button class="btn" type="button" onclick="setBackground('ocean')">Океан</button>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>Обо мне</h2>
+            <p>Я начинаю изучать веб-разработку и уже умею создавать сайты.</p>
+            <p>Моя цель — стать разработчиком и зарабатывать на этом 💻</p>
+        </section>
+
+        <section id="projects">
+            <h2>Мои проекты</h2>
+            <div class="projects">
+                <div class="card">
+                    <h3>Мой первый сайт</h3>
+                    <p>Это мой первый сайт, который я создала с помощью HTML, CSS и GitHub Pages.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Сайт-портфолио</h3>
+                    <p>На этом сайте я учусь оформлять страницу, добавлять стили, изображения и кнопки.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Мои навыки</h2>
+            <ul class="skills">
+                <li>💻 HTML</li>
+                <li>🎨 CSS</li>
+                <li>🚀 GitHub</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Контакты</h2>
+            <p>Email: <a href="mailto:olgalitvinenkolitvinenko@email.com">olgalitvinenkolitvinenko@email.com</a></p>
+            <p>GitHub:
+                <a href="https://github.com/olgaltivinenkolitvinenko-ux" target="_blank">olgaltivinenkolitvinenko-ux</a>
+            </p>
+        </section>
+
+        <footer>
+            <p>© 2026 Оля | Мой первый сайт</p>
+        </footer>
     </div>
 
-    <div class="hero-image">
-        <img src="https://picsum.photos/300" alt="моё фото">
-    </div>
-</section>
+    <script>
+        const backgrounds = {
+            mountains: "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80')",
+            city: "url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1600&q=80')",
+            space: "url('https://images.unsplash.com/photo-1462332420958-a05d1e002413?auto=format&fit=crop&w=1600&q=80')",
+            ocean: "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80')"
+        };
 
-   <section id="about">
-    <h2>Обо мне</h2>
-    <p>Я начинаю изучать веб-разработку и уже умею создавать сайты.</p>
-    <p>Моя цель — стать разработчиком и зарабатывать на этом 💻</p>
-</section>
-    <div class="projects">
-    <section id="projects">
-    <h2>Мои проекты</h2>
+        function applySavedTheme() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "light") {
+                document.body.classList.add("light-theme");
+            }
+        }
 
-    <div class="card">
-        <h3>Мой первый сайт</h3>
-        <p>Это мой первый сайт, который я создала с помощью HTML, CSS и GitHub Pages.</p>
-    </div>
+        function toggleTheme() {
+            document.body.classList.toggle("light-theme");
+            if (document.body.classList.contains("light-theme")) {
+                localStorage.setItem("theme", "light");
+            } else {
+                localStorage.setItem("theme", "dark");
+            }
+        }
 
-    <div class="card">
-        <h3>Сайт-портфолио</h3>
-        <p>На этом сайте я учусь оформлять страницу, добавлять стили, изображения и кнопки.</p>
-    </div>
-        </div>
-</section>
-    <section id="skills">
-    <h2>Мои навыки</h2>
-    <ul class="skills">
-    <li>💻 HTML</li>
-    <li>🎨 CSS</li>
-    <li>🚀 GitHub</li>
-</ul>
-    <section id="contact">
-    <h2>Контакты</h2>
-        <p>Email: <a href="mailto:olgalitvinenkolitvinenko@email.com">olgalitvinenkolitvinenko@email.com</a></p>
-        <p>GitHub: 
-<a href="https://github.com/olgaltivinenkolitvinenko-ux" target="_blank">
-olgaltivinenkolitvinenko-ux
-</a>
-</p>
-</section>
-    <button onclick="toggleTheme()" class="btn">Сменить тему</button>
-    <footer>
-    <p>© 2026 Оля | Мой первый сайт</p>
-</footer>
-    </body>
+        function setBackground(name) {
+            if (backgrounds[name]) {
+                document.body.style.backgroundImage = backgrounds[name];
+                localStorage.setItem("background", name);
+            }
+        }
+
+        function setRandomBackground() {
+            const keys = Object.keys(backgrounds);
+            const randomKey = keys[Math.floor(Math.random() * keys.length)];
+            setBackground(randomKey);
+        }
+
+        function applySavedBackground() {
+            const savedBackground = localStorage.getItem("background");
+            if (savedBackground && backgrounds[savedBackground]) {
+                document.body.style.backgroundImage = backgrounds[savedBackground];
+            } else {
+                setBackground("mountains");
+            }
+        }
+
+        applySavedTheme();
+        applySavedBackground();
+    </script>
+</body>
 </html>
