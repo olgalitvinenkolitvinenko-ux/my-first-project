@@ -207,6 +207,11 @@ section {
 <section id="projects" class="hidden">
 <section id="skills" class="hidden">
 <section id="contact" class="hidden">
+    <script>
+function toggleTheme() {
+    document.body.classList.toggle('light-theme');
+}
+</script>
 
 body {
     background: linear-gradient(180deg, #0f172a 0%, #081225 100%);
@@ -470,6 +475,15 @@ section p {
     .hero-buttons {
         justify-content: center;
     }
+    .theme-toggle {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    background: #38bdf8;
+    color: #0f172a;
+    font-weight: bold;
+    cursor: pointer;
+}
 
     h1 {
         font-size: 44px;
@@ -504,6 +518,24 @@ section p {
     .container {
         padding: 16px;
     }
+}
+    .light-theme {
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+.light-theme .navbar {
+    background: rgba(226, 232, 240, 0.9);
+}
+
+.light-theme .card,
+.light-theme .contact-box {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.light-theme .navbar a {
+    color: #0ea5e9;
 }
 </style>
     <title>Мой первый сайт</title>
@@ -562,9 +594,10 @@ section p {
     <section id="contact">
     <h2>Контакты</h2>
     <p>Email: olgaltivinenkolitvinenko@email.com</p>
-        <p>Email: <a href="mailto:olgalitvinenkolitvinenko@email.com">твояпочта@email.com</a></p>
+        <p>Email: <a href="mailto:olgalitvinenkolitvinenko@email.com">olgalitvinenkolitvinenko@email.com</a></p>
     <p>GitHub: olgaltivinenkolitvinenko-ux</p>
 </section>
+   <button class="theme-toggle" onclick="toggleTheme()">Сменить тему</button>
     <footer>
     <p>© 2026 Оля | Мой первый сайт</p>
 </footer>
