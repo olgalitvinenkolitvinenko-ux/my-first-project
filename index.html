@@ -154,6 +154,272 @@ section {
 .hero-text {
     text-align: left;
 }
+    html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(180deg, #0f172a 0%, #081225 100%);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* МЕНЮ */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 18px 20px;
+    margin-bottom: 40px;
+    background: rgba(19, 32, 66, 0.85);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    text-align: left;
+    padding: 40px 0 20px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
+}
+
+.hello {
+    color: #94a3b8;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #38bdf8;
+    font-size: 56px;
+    margin: 0 0 15px;
+}
+
+.subtitle {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #e2e8f0;
+    max-width: 520px;
+}
+
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* КНОПКИ */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #0ea5e9;
+    transform: scale(1.05);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #38bdf8;
+    border: 1px solid #38bdf8;
+}
+
+.btn-outline:hover {
+    background-color: #132042;
+    color: white;
+}
+
+/* СЕКЦИИ */
+section {
+    margin-top: 80px;
+}
+
+h2 {
+    margin-bottom: 25px;
+    color: #38bdf8;
+    font-size: 38px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* ПРОЕКТЫ */
+.projects {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: linear-gradient(180deg, #132042 0%, #0f1c3b 100%);
+    padding: 25px;
+    width: 320px;
+    border-radius: 18px;
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.08);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
+}
+
+h3 {
+    color: #38bdf8;
+    margin-top: 0;
+}
+
+/* НАВЫКИ */
+.skills {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills li {
+    background-color: #132042;
+    margin: 12px auto;
+    padding: 12px 20px;
+    width: 220px;
+    border-radius: 10px;
+    border: 1px solid rgba(56, 189, 248, 0.08);
+}
+
+/* КОНТАКТЫ */
+#contact p {
+    margin: 8px 0;
+}
+
+/* АНИМАЦИИ */
+.hero,
+.card,
+.skills li,
+section h2,
+section p {
+    animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* АДАПТИВ */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .subtitle {
+        margin: 0 auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 14px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .hero-image img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .container {
+        padding: 16px;
+    }
+}
 </style>
     <title>Мой первый сайт</title>
 </head>
@@ -167,13 +433,19 @@ section {
 </nav>
    <section id="home" class="hero">
     <div class="hero-text">
-        <h1>Привет! 👋</h1>
-        <p>Меня зовут Оля</p>
-        <p>Я начинаю путь в веб-разработке 🚀</p>
-        <a href="#" class="btn">Написать мне</a>
+        <p class="hello">Привет, я</p>
+        <h1>Оля 👋</h1>
+        <p class="subtitle">Начинающий веб-разработчик. Изучаю HTML, CSS, GitHub и создаю свои первые красивые сайты.</p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="btn">Мои проекты</a>
+            <a href="#contact" class="btn btn-outline">Контакты</a>
+        </div>
     </div>
 
-    <img src="https://picsum.photos/200" alt="моё фото">
+    <div class="hero-image">
+        <img src="https://picsum.photos/300" alt="моё фото">
+    </div>
 </section>
 
    <section id="about">
