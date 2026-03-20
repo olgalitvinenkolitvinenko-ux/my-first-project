@@ -9,6 +9,39 @@
         html {
             scroll-behavior: smooth;
         }
+        body {
+    margin: 0;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+    text-align: center;
+    background-color: #0f172a;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 0.5s ease, background-color 0.35s ease, color 0.35s ease;
+}
+        
+<div class="corner-emoji top-left" onclick="spawnEmoji()">✨</div>
+
+<div class="floating-widget top-right">
+    <div class="widget-title">Сейчас</div>
+    <div id="clock">--:--:--</div>
+</div>
+
+<div class="mini-game bottom-right" onclick="surpriseMessage()">
+    🎁
+</div>
+
+<div id="emoji-rain"></div>
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 15, 30, 0.58);
+    backdrop-filter: blur(6px);
+    z-index: -1;
+}
 
         body {
             margin: 0;
@@ -30,6 +63,154 @@
             background: rgba(2, 6, 23, 0.72);
             z-index: -1;
         }
+        #emoji-rain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3000;
+    overflow: hidden;
+}
+
+.floating-emoji {
+    position: absolute;
+    font-size: 24px;
+    animation: fallEmoji linear forwards;
+}
+
+@keyframes fallEmoji {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(110vh) rotate(180deg);
+        opacity: 0;
+    }
+}
+        .corner-emoji,
+.floating-widget,
+.mini-game {
+    position: fixed;
+    z-index: 2000;
+    user-select: none;
+}
+
+.top-left {
+    top: 18px;
+    left: 18px;
+}
+
+.top-right {
+    top: 18px;
+    right: 18px;
+}
+
+.bottom-right {
+    right: 18px;
+    bottom: 18px;
+}
+
+.corner-emoji {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.corner-emoji:hover {
+    transform: scale(1.08) rotate(8deg);
+}
+
+.floating-widget {
+    min-width: 120px;
+    padding: 12px 14px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.widget-title {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-bottom: 4px;
+}
+
+#clock {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.mini-game {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.mini-game:hover {
+    transform: scale(1.08);
+}
+        .light-theme {
+    background-color: #f5f7fb !important;
+    color: #111827 !important;
+}
+
+.light-theme::before {
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.light-theme .subtitle,
+.light-theme p,
+.light-theme li,
+.light-theme .hello {
+    color: #1f2937 !important;
+}
+
+.light-theme .navbar a,
+.light-theme h2,
+.light-theme h3 {
+    color: #111827 !important;
+}
+
+.light-theme h1 {
+    background: linear-gradient(90deg, #111827, #374151);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.light-theme .card,
+.light-theme .navbar,
+.light-theme .floating-widget,
+.light-theme .corner-emoji,
+.light-theme .mini-game {
+    background: rgba(255, 255, 255, 0.7) !important;
+    color: #111827 !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+.light-theme .btn {
+    background: #111827;
+    color: white;
+}
+
+.light-theme .btn-outline {
+    background: transparent;
+    color: #111827;
+    border: 1px solid #111827;
+}
+
+.light-theme .btn-outline:hover {
+    background: #e5e7eb;
+    color: #111827;
+}
 
         .light-theme {
             background-color: #e2e8f0 !important;
@@ -195,6 +376,17 @@
             justify-content: center;
             flex-wrap: wrap;
         }
+        .navbar,
+.card,
+.floating-widget,
+.corner-emoji,
+.mini-game {
+    background: rgba(17, 24, 39, 0.42);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+}
 
         .card {
             background: linear-gradient(180deg, #132042 0%, #0f1c3b 100%);
@@ -210,6 +402,37 @@
             transform: translateY(-8px);
             box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
         }
+        .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(180deg, #4cc9ff 0%, #2fa8e9 100%);
+    color: #08111f;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    box-shadow: 0 8px 18px rgba(56, 189, 248, 0.25);
+}
+
+.btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(56, 189, 248, 0.32);
+}
+
+.btn-outline {
+    background: rgba(255,255,255,0.06);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.16);
+}
+        .icon-white {
+    color: white;
+}
+
+.light-theme .icon-white {
+    color: #111827;
+}
 
         h3 {
             color: #38bdf8;
@@ -251,6 +474,26 @@
             flex-wrap: wrap;
             margin-top: 15px;
         }
+        #about,
+#projects,
+#skills,
+#contact,
+.wallpapers {
+    padding: 28px;
+    border-radius: 28px;
+    background: rgba(15, 23, 42, 0.22);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.06);
+    margin-top: 32px;
+}
+      .light-theme #about,
+.light-theme #projects,
+.light-theme #skills,
+.light-theme #contact,
+.light-theme .wallpapers {
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+}  
 
         footer {
             margin-top: 100px;
@@ -354,6 +597,7 @@
         <section id="about">
             <h2>Обо мне</h2>
             <p>Я начинаю изучать веб-разработку и уже умею создавать сайты.</p>
+            <p><span class="icon-white">✦</span> Начинающий веб-разработчик</p>
             <p>Моя цель — стать разработчиком и зарабатывать на этом 💻</p>
         </section>
 
@@ -407,6 +651,43 @@
             if (savedTheme === "light") {
                 document.body.classList.add("light-theme");
             }
+            <script>
+function updateClock() {
+    const now = new Date();
+    const time = now.toLocaleTimeString();
+    const clock = document.getElementById("clock");
+    if (clock) clock.textContent = time;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+function spawnEmoji() {
+    const emojis = ["✨", "💙", "🚀", "🫧", "☁️", "🌟"];
+    const container = document.getElementById("emoji-rain");
+
+    for (let i = 0; i < 12; i++) {
+        const el = document.createElement("span");
+        el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        el.className = "floating-emoji";
+        el.style.left = Math.random() * window.innerWidth + "px";
+        el.style.top = "-20px";
+        el.style.animationDuration = (2 + Math.random() * 2) + "s";
+        container.appendChild(el);
+
+        setTimeout(() => el.remove(), 4000);
+    }
+}
+
+function surpriseMessage() {
+    const messages = [
+        "Ты молодец 🚀",
+        "Сайт становится всё лучше ✨",
+        "Профессионально и со вкусом 💎",
+        "Продолжаем прокачку 😎"
+    ];
+    alert(messages[Math.floor(Math.random() * messages.length)]);
+}
+</script>
         }
 
         function toggleTheme() {
