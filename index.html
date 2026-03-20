@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+    <nav class="navbar">
+    <a href="#home">Главная</a>
+    <a href="#about">Обо мне</a>
+    <a href="#projects">Проекты</a>
+    <a href="#skills">Навыки</a>
+    <a href="#contact">Контакты</a>
+</nav>
 <head>
     <style>
     body {
@@ -66,6 +73,7 @@
     width: 300px;
     border-radius: 12px;
     transition: 0.3s;
+            box-shadow: 0 0 20px rgba(56,189,248,0.1);
 }
         .card:hover {
     transform: translateY(-5px);
@@ -122,6 +130,32 @@ section {
     margin: 0 auto;
     padding: 20px;
 }
+    .navbar {
+    position: sticky;
+    top: 0;
+    background-color: #132042;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    z-index: 100;
+}
+
+.navbar a {
+    color: #38bdf8;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: white;
+}
+    .projects {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 </style>
     <title>Мой первый сайт</title>
 </head>
@@ -135,13 +169,13 @@ section {
 
     <a href="#" class="btn">Написать мне</a>
 </section>
-    
+
    <section id="about">
     <h2>Обо мне</h2>
     <p>Я начинаю изучать веб-разработку и уже умею создавать сайты.</p>
     <p>Моя цель — стать разработчиком и зарабатывать на этом 💻</p>
 </section>
-    
+    <div class="projects">
     <section id="projects">
     <h2>Мои проекты</h2>
 
@@ -154,6 +188,7 @@ section {
         <h3>Сайт-портфолио</h3>
         <p>На этом сайте я учусь оформлять страницу, добавлять стили, изображения и кнопки.</p>
     </div>
+        </div>
 </section>
     <section id="skills">
     <h2>Мои навыки</h2>
