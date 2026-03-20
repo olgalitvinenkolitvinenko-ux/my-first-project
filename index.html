@@ -8,7 +8,13 @@
         font-family: Arial;
         text-align: center;
     }
-
+<nav class="navbar">
+    <a href="#home">Главная</a>
+    <a href="#about">Обо мне</a>
+    <a href="#projects">Проекты</a>
+    <a href="#skills">Навыки</a>
+    <a href="#contact">Контакты</a>
+</nav>
     h1 {
         color: #38bdf8;
         font-size: 40px;
@@ -85,38 +91,82 @@ h3 {
     margin: 0 auto;
     padding: 20px;
 }
+    html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    background-color: #132042;
+    border-radius: 12px;
+}
+
+.navbar a {
+    color: #38bdf8;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+section {
+    margin-top: 50px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
 </style>
     <title>Мой первый сайт</title>
 </head>
 <body>
-     <div class="container">
+    <section id="home">
     <h1>Привет!</h1>
     <p>Меня зовут Оля</p>
     <p>Я учусь GitHub 🚀</p>
+
     <img src="https://picsum.photos/200" alt="моё фото">
-    <a href="mailto:olgalitvinenkolitvinenko@email.com" class="btn">Написать мне</a>
+
+    <a href="#" class="btn">Написать мне</a>
+</section>
     
+   <section id="about">
     <h2>Обо мне</h2>
-<p>Я начинаю изучать веб-разработку и уже умею создавать сайты.</p>
-<p>Моя цель — стать разработчиком и зарабатывать на этом 💻</p>
+    <p>Я начинаю изучать веб-разработку и уже умею создавать сайты.</p>
+    <p>Моя цель — стать разработчиком и зарабатывать на этом 💻</p>
+</section>
     
+    <section id="projects">
     <h2>Мои проекты</h2>
-<div class="card">
-    <h3>Мой первый сайт</h3>
-    <p>Это мой первый сайт, который я создала с помощью HTML, CSS и GitHub Pages.</p>
-</div>
 
     <div class="card">
-    <h3>Сайт-портфолио</h3>
-    <p>На этом сайте я учусь оформлять страницу, добавлять стили, изображения и кнопки.</p>
-</div>
+        <h3>Мой первый сайт</h3>
+        <p>Это мой первый сайт, который я создала с помощью HTML, CSS и GitHub Pages.</p>
+    </div>
 
+    <div class="card">
+        <h3>Сайт-портфолио</h3>
+        <p>На этом сайте я учусь оформлять страницу, добавлять стили, изображения и кнопки.</p>
+    </div>
+</section>
+    <section id="skills">
     <h2>Мои навыки</h2>
-<ul class="skills">
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>GitHub</li>
-</ul>
-           </div>
+    <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>GitHub</li>
+    </ul>
+</section>
+    <section id="contact">
+    <h2>Контакты</h2>
+    <p>Email: твой@email.com</p>
+    <p>GitHub: olgaltivinenkolitvinenko-ux</p>
+</section>
     </body>
 </html>
