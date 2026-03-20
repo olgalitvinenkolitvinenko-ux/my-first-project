@@ -2,6 +2,56 @@
 <html>
 <head>
     <style>
+        <script>
+const backgrounds = {
+    mountains: "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80')",
+    city: "url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1600&q=80')",
+    space: "url('https://images.unsplash.com/photo-1462332420958-a05d1e002413?auto=format&fit=crop&w=1600&q=80')",
+    ocean: "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80')"
+};
+
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+    }
+}
+
+function toggleTheme() {
+    document.body.classList.toggle("light-theme");
+
+    if (document.body.classList.contains("light-theme")) {
+        localStorage.setItem("theme", "light");
+    } else {
+        localStorage.setItem("theme", "dark");
+    }
+}
+
+function setBackground(name) {
+    if (backgrounds[name]) {
+        document.body.style.backgroundImage = backgrounds[name];
+        localStorage.setItem("background", name);
+    }
+}
+
+function setRandomBackground() {
+    const keys = Object.keys(backgrounds);
+    const randomKey = keys[Math.floor(Math.random() * keys.length)];
+    setBackground(randomKey);
+}
+
+function applySavedBackground() {
+    const savedBackground = localStorage.getItem("background");
+    if (savedBackground && backgrounds[savedBackground]) {
+        document.body.style.backgroundImage = backgrounds[savedBackground];
+    } else {
+        setBackground("mountains");
+    }
+}
+
+applySavedTheme();
+setRandomBackground();
+</script>
     body {
         background-color: #0f172a;
         color: white;
@@ -337,13 +387,21 @@ h1 {
     max-width: 520px;
 }
 
-.hero-buttons {
-    margin-top: 25px;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
+<div class="hero-buttons">
+    <a href="#projects" class="btn">Мои проекты</a>
+    <a href="#contact" class="btn btn-outline">Контакты</a>
+    <button onclick="toggleTheme()" class="btn" type="button">Сменить тему</button>
+    <button onclick="setRandomBackground()" class="btn btn-outline" type="button">Случайный фон</button>
+</div>
+    <section class="wallpapers">
+    <h2>Фон сайта</h2>
+    <div class="wallpaper-buttons">
+        <button class="btn" type="button" onclick="setBackground('mountains')">Горы</button>
+        <button class="btn" type="button" onclick="setBackground('city')">Город</button>
+        <button class="btn" type="button" onclick="setBackground('space')">Космос</button>
+        <button class="btn" type="button" onclick="setBackground('ocean')">Океан</button>
+    </div>
+</section>
 /* КНОПКИ */
 .btn {
     display: inline-block;
@@ -544,6 +602,53 @@ section p {
 .skills li:hover {
     transform: scale(1.05);
     background-color: #1e293b;
+}
+    body {
+    margin: 0;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #0f172a;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 0.5s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.72);
+    z-index: -1;
+}
+
+.light-theme {
+    color: #0f172a;
+    background-color: #e2e8f0;
+}
+
+.light-theme::before {
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.wallpapers {
+    margin-top: 50px;
+}
+
+.wallpaper-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+button.btn {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
 }
 </style>
     <title>Мой первый сайт</title>
