@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои проекты</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #0f172a 0%, #081225 100%);
+            color: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(19, 32, 66, 0.85);
+            border-radius: 14px;
+            margin-top: 20px;
+        }
+
+        .navbar a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: white;
+        }
+
+        h1 {
+            color: #38bdf8;
+            margin-top: 40px;
+        }
+
+        .projects {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #132042;
+            padding: 25px;
+            width: 280px;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.08);
+        }
+
+        .card h3 {
+            color: #38bdf8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html">Главная</a>
+            <a href="projects.html">Проекты</a>
+            <a href="contact.html">Контакты</a>
+        </nav>
+
+        <h1>Мои проекты</h1>
+
+        <div class="projects">
+            <div class="card">
+                <h3>Мой первый сайт</h3>
+                <p>Это мой первый сайт, который я создала с помощью HTML, CSS и GitHub Pages.</p>
+            </div>
+
+            <div class="card">
+                <h3>Сайт-портфолио</h3>
+                <p>На этом сайте я учусь оформлять страницу, добавлять стили, изображения и кнопки.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
